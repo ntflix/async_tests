@@ -14,7 +14,7 @@ public class AsyncThings {
             
             // return the factorial
             Integer result = 1;
-            for (int i = 1; i < n + 1; i++) {
+            for (int i = 1; i <= n ; i++) {
                 result *= i;
             }
             return result;

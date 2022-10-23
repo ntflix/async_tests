@@ -25,7 +25,19 @@ public class App
         
         System.out.println("This is some code that comes after the async call!! :D");
         System.out.println("Magic!");
-        
+
+        // sleep for 10 seconds to demo different threads
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("This is some code that comes after the async call _and_ the sleep!!");
+    
+        // the 5 seconds elapses and the factorial is displayed. The 10 seconds does not affect the async process
+        // as it is running in a different thread.
+
         try {
             futureResponse.get();
         } catch (Exception e) {
