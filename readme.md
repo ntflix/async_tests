@@ -8,6 +8,7 @@ Calculating factorial of 5...
 This is some code that comes after the async call!! :D
 Magic!
 Factorial of 5 is 120
+This is some code that comes after the main thread sleep!!
 ```
 
 ## Explanation

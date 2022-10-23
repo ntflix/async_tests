@@ -33,7 +33,7 @@ public class App
             e.printStackTrace();
         }
 
-        System.out.println("This is some code that comes after the async call _and_ the sleep!!");
+        System.out.println("This is some code that comes after the main thread sleep!!");
     
         // the 5 seconds elapses and the factorial is displayed. The 10 seconds does not affect the async process
         // as it is running in a different thread.
