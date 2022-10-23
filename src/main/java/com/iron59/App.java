@@ -1,5 +1,7 @@
 package com.iron59;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,26 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Integer toCalculateFactorial = 5;
+        System.out.println("Calculating factorial of " + toCalculateFactorial + "...");
+        
+        AsyncThings asyncThings = new AsyncThings();
+        CompletableFuture<Integer> futureResponse = asyncThings.getFactorial(toCalculateFactorial);
+        futureResponse.whenComplete((result, exception) -> {
+            if (exception != null) {
+                System.out.println("Error calculating factorial: " + exception.getMessage());
+            } else {
+                System.out.println("Factorial of " + toCalculateFactorial + " is " + result);
+            }
+        });
+        
+        System.out.println("This is some code that comes after the async call!! :D");
+        System.out.println("Magic!");
+        
+        try {
+            futureResponse.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
